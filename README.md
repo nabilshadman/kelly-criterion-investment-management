@@ -1,19 +1,16 @@
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
-        
-# [KellyPortfolio](https://thk3421-models.github.io/KellyPortfolio/)
-Thomas Kirschenmann  
-thk3421@gmail.com
+# Kelly Criterion in Investment Management
 
-## Motivation
+## Introduction  
 The goal of this project is to assist an investor by calculating the Kelly optimal portfolio allocation, *conditional on the investor's view of expected returns and covariance* of the assets. It is logical to separate portfolio allocation from the price prediction forecasts.  Everyone has their own view on the difficulty or outright futility of predicting future market prices (active managers vs. strict efficient market hypothesis followers).  Despite these differences, all portfolio managers are required to allocate capital among risky assets.  They are forced to answer the question: "conditional on my views of the future, what is the optimal portfolio allocation that maximizes growth?" 
 
 This project provides the Kelly Portfolio allocation for users with their own views (forecasts) on the expected returns and covariances of future prices.  The user can input their own expected returns in a config file, and the code will download historical prices from Yahoo! Finance, calculate the covariance of daily returns, and then calculate the Kelly portfolio.  Importantly, the code assumes that the historical covariance matrix is representative of the future covariance matrix.  As an option, the user can use historical returns as the expectation of future returns, and see how that changes the Kelly Portfolio.  See the Usage section for detail on how to set up the config file.    
 
 The intended usage of this program is to view the Kelly Portfolio for the securities under consideration, and then consider biasing the real allocations toward the Kelly percentages in hopes of increasing the long term growth rate.  Careful consideration should be applied because the results are widely known to be extremely sensitive to errors in the estimated return rates, and approximately 20 times more sensitive than to errors in the covariance matrix.  Clearly, this is for informational purposes only and not intended as a sole-guide to portfolio allocation. Additionally, please see the discussion below for risk-return discussion around using fractional Kelly to slightly reduce expected growth while dramatically reducing the expected variance.
 
-This is primarily inspired by the fantastic collection of academic papers in:     
-![](http://www.edwardothorp.com/wp-content/uploads/2016/11/kelly-capital-growth-investment-criterion-420x634.jpg)
+This is primarily inspired by the fantastic collection of academic papers in:  
+
+![](http://www.edwardothorp.com/wp-content/uploads/2016/11/kelly-capital-growth-investment-criterion-420x634.jpg)  
+
 
 ## Historical Background
 The Kelly Criterion was invented by Claude Shannon and popularized by Ed Thorp who used it to successfully optimize his wager sizes for gambling games that offered a positive expected value.  The Kelly Criterion is the optimal fraction of total wealth to wager on an individual positive expected value bet such that the expected logarithm of total wealth after repeated wagers is maximized.  Smaller than optimal bet sizes lead to smaller wins which do not compound as quickly, whereas larger than optimal bet sizes suffer from an increased risk of ruin.  For more details on the Kelly Criterion, see [https://en.wikipedia.org/wiki/Kelly_criterion](https://en.wikipedia.org/wiki/Kelly_criterion)
@@ -162,3 +159,7 @@ XOM         0.00                0.00
 Cash: 850000.0  
 ****************************************************************************************************  
 </pre>
+
+
+## Reference
+The repository has been forked from the [Kelly Portfolio](https://github.com/thk3421-models/KellyPortfolio) project by Thomas Kirschenmann.  
